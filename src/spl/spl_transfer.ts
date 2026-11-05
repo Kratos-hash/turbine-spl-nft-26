@@ -94,7 +94,7 @@ const to = address("9EUd4VNcjMAysd7zQk3Q1a4tb28BYndLNBAQDiYnHJ64");
 
     await sendAndConfirm(signedTx, { commitment: "confirmed" });
 
-    console.log(`mint txid: ${signature}`);
+    console.log(`transfer txid: ${signature}`);
   } catch (error) {
     console.log(error);
   }
