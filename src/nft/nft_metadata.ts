@@ -25,13 +25,27 @@ umi.use(signerIdentity(signer));
   try {
     //change the image uri to your image uri obtained from nft_image.ts
     const image =
-      "https://gateway.irys.xyz/5EDyiNrMWfhjdsEwXLrwkHPwZoZB2m1A2Kudrfxo1tpr";
+      " https://gateway.irys.xyz/Bfbz1pcMY2vcd5osmqNaGx3AbR9fd4ADiqkHiESCn7ww";
 
-    //json scheme : https://www.metaplex.com/docs/smart-contracts/core/json-schema
-    //change the metadata
-    // const metadata =
-    // const myUri =
-    // console.log(`metadata uri: ${myUri} `);
+   
+    const metadata = {
+      name: "Turbine-NFT",
+      description: "Adewale's NFT",
+      image,
+      attributes: [{trait_type: "Rarity", value: "legendary"}],
+
+      properties: {
+        files: [
+          {
+            uri: image,
+            type: "image/jpeg",
+          },
+        ],
+        category: "image",
+      },
+    };
+    const myUri = await umi.uploader.uploadJson([metadata]);
+    console.log(`metadata uri: ${myUri} `);
   } catch (error) {
     console.log("error", error);
   }

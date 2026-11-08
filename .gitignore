@@ -10,6 +10,5 @@ node_modules/
 .env.production
 
 devnet-wallet.json
-images-cat.jpeg
-
-wallet.json
+id2.json
+id2.json:Zone.Identifier

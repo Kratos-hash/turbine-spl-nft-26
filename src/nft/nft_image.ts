@@ -27,13 +27,14 @@ umi.use(signerIdentity(signer));
 (async () => {
   try {
     //chanege image path to your image path
-    const image = await readFile("file-path");
+    const image = await readFile("IMG-20231114-WA0031.jpg");
 
     //change the image name and mime type
-    // const file =
+ const file = createGenericFile(image, "my-pics-1.jpg", { contentType: 'image/jpeg'});
 
-    // const [myUri] =
-    // console.log("Your image URI: ", myUri);
+  const [myUri] = await umi.uploader.upload([file]);
+  console.log("Your image URI: ", myUri);
+
   } catch (error) {
     console.log(error);
   }
